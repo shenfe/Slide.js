@@ -16,45 +16,57 @@
                 background-color: #ccc;
             }
             .slider-container .slider-dot {
-                width: 8px;
-                height: 8px;
+                width: 16px;
+                height: 16px;
                 background-color: #666;
+                border-radius: 100px;
             }
             #slider1, #slider2 {
+                position: relative;
                 padding: 48px;
+            }
+            #slider1 .value, #slider2 .value {
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                -webkit-transform: translate3d(-50%,0,0);
+                transform: translate3d(-50%,0,0);
             }
             #slider2.slider-container {
                 width: 16px;
                 height: 128px;
+                margin: auto;
             }
         </style>
     </head>
     <body>
-        <div id="slider1"></div>
-        <div id="slider2"></div>
+        <div id="slider1"><span class="value"></span></div>
+        <div id="slider2"><span class="value"></span></div>
         <script type="text/javascript">
             window.onload = function () {
                 var $slider1 = document.getElementById('slider1');
+                var $value1 = document.querySelector('#slider1 .value');
                 var slider = new Slider($slider1, {
-                    init: 0,
-                    dir: 'h',
                     onchanging: function (percent) {
-                        console.log(`progress h changing: ${percent}`);
+                        percent = Math.floor(percent * 100) / 100;
+                        $value1.innerHTML = percent;
                     },
                     onchanged: function (percent) {
-                        console.log(`progress h changed: ${percent}`);
+                        $value1.innerHTML = '';
                     }
                 });
 
                 var $slider2 = document.getElementById('slider2');
+                var $value2 = document.querySelector('#slider2 .value');
                 var slider = new Slider($slider2, {
                     init: 100,
                     dir: 'v',
                     onchanging: function (percent) {
-                        console.log(`progress v changing: ${percent}`);
+                        percent = Math.floor(percent * 100) / 100;
+                        $value2.innerHTML = percent;
                     },
                     onchanged: function (percent) {
-                        console.log(`progress v changed: ${percent}`);
+                        $value2.innerHTML = '';
                     }
                 });
             };
