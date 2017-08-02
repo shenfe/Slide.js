@@ -19,6 +19,8 @@ var slider = new Slider($slider, {
         console.log(`changed: ${percent}`);
     }
 });
+
+slider.progress = Math.random() * 100;
 ```
 
 ### style patches
