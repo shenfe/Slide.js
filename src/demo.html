@@ -46,7 +46,7 @@
             window.onload = function () {
                 var $slider1 = document.getElementById('slider1');
                 var $value1 = document.querySelector('#slider1 .value');
-                var slider = new Slider($slider1, {
+                var slider1 = new Slider($slider1, {
                     onchanging: function (percent) {
                         percent = Math.floor(percent * 100) / 100;
                         $value1.innerHTML = percent;
@@ -58,7 +58,7 @@
 
                 var $slider2 = document.getElementById('slider2');
                 var $value2 = document.querySelector('#slider2 .value');
-                var slider = new Slider($slider2, {
+                window.slider2 = new Slider($slider2, {
                     init: 100,
                     dir: 'v',
                     onchanging: function (percent) {

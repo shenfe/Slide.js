@@ -108,7 +108,7 @@ var rand_351089689 = (function () {
             set: function (v) {
                 if (v < 0) v = 0;
                 if (v > 100) v = 100;
-                setOffset(offset + length.total * v / 100);
+                setOffset(length.total * v / 100);
             }
         });
     };
