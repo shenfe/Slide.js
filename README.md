@@ -1,6 +1,9 @@
 # lite-slider
 A lightweight slider component for mobile frontend.
 
+## Demo
+[Demo](http://shenfe.github.io/repos/lite-slider/demo.html)
+
 ## Usage
 
 ### script
